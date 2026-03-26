@@ -1,3 +1,4 @@
+import { ProfileUser } from '../types/profile';
 import { create } from 'zustand';
 import { ChangeRecord } from '../types';
 import { MethodologicalProfile, ProfileId } from '../types/profile';
@@ -13,11 +14,14 @@ interface ChangeFlowState {
   
   // UI state
   selectedChangeId: string | null;
+  // Active simulated user (only for profiles with custom extension)
+  activeUser: ProfileUser | null;
 
   // Actions
   setProfile: (id: ProfileId) => void;
   setChanges: (changes: ChangeRecord[]) => void;
   selectChange: (id: string | null) => void;
+  setActiveUser: (user: ProfileUser | null) => void;
 }
 
 export const useStore = create<ChangeFlowState>((set) => ({
@@ -27,6 +31,7 @@ export const useStore = create<ChangeFlowState>((set) => ({
 
   changes: [],
   selectedChangeId: null,
+  activeUser: null,
 
   setProfile: (id: ProfileId) =>
     set({
@@ -37,4 +42,5 @@ export const useStore = create<ChangeFlowState>((set) => ({
   setChanges: (changes: ChangeRecord[]) => set({ changes }),
 
   selectChange: (id: string | null) => set({ selectedChangeId: id }),
+  setActiveUser: (user: ProfileUser | null) => set({ activeUser: user }),
 }));

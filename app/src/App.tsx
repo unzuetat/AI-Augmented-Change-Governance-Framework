@@ -7,6 +7,7 @@ import PlaceholderView from './views/PlaceholderView';
 import ChangeRegister from './views/ChangeRegister';
 import IntakeForm from './views/IntakeForm';
 import WorkflowViewer from './views/WorkflowViewer';
+import SettingsView from './views/SettingsView';
 
 const pageTitles: Record<string, string> = {
   '/':           'Dashboard',
@@ -33,7 +34,7 @@ export default function App() {
         <Route path="/changes" element={<ChangeRegister />} />
             <Route path="/intake" element={<IntakeForm />} />
             <Route path="/workflow" element={<WorkflowViewer />} />
-            <Route path="/settings" element={<PlaceholderView name="Settings" />} />
+          <Route path="/settings" element={<SettingsView />} />
           </Routes>
         </main>
       </div>

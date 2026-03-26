@@ -8,6 +8,7 @@ import ChangeRegister from './views/ChangeRegister';
 import IntakeForm from './views/IntakeForm';
 import WorkflowViewer from './views/WorkflowViewer';
 import SettingsView from './views/SettingsView';
+import ComparisonView from './views/ComparisonView';
 
 const pageTitles: Record<string, string> = {
   '/':           'Dashboard',
@@ -15,6 +16,7 @@ const pageTitles: Record<string, string> = {
   '/intake':     'New Change Request',
   '/workflow':   'Workflow Viewer',
   '/translator': 'Governance Translator',
+  '/compare':    'Framework Comparison',
   '/settings':   'Settings',
 };
 
@@ -34,7 +36,8 @@ export default function App() {
         <Route path="/changes" element={<ChangeRegister />} />
             <Route path="/intake" element={<IntakeForm />} />
             <Route path="/workflow" element={<WorkflowViewer />} />
-          <Route path="/settings" element={<SettingsView />} />
+            <Route path="/compare" element={<ComparisonView />} />
+            <Route path="/settings" element={<SettingsView />} />
           </Routes>
         </main>
       </div>

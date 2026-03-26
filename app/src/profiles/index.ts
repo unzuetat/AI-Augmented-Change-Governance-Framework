@@ -1,4 +1,4 @@
-import { MethodologicalProfile, ProfileId } from '../types/profile';
+import { MethodologicalProfile, ExtendedMethodologicalProfile, ProfileId } from '../types/profile';
 import { prince2ItilProfile } from './prince2-itil';
 import { prince2ItilCustomProfile } from './prince2-itil-custom';
 import { pmiItilProfile } from './pmi-itil';
@@ -84,11 +84,11 @@ export const profiles: Record<ProfileId, MethodologicalProfile | ExtendedMethodo
 };
 
 // Helper to get a profile by ID
-export function getProfile(id: ProfileId): MethodologicalProfile {
+export function getProfile(id: ProfileId): MethodologicalProfile | ExtendedMethodologicalProfile {
   return profiles[id];
 }
 
 // List all available profiles (for the selector UI)
-export function listProfiles(): MethodologicalProfile[] {
+export function listProfiles(): (MethodologicalProfile | ExtendedMethodologicalProfile)[] {
   return Object.values(profiles);
 }

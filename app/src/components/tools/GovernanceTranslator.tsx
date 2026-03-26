@@ -317,7 +317,7 @@ export default function GovernanceTranslator() {
           </div>
 
           {/* Mode toggle */}
-          <div className="flex gap-1 bg-gray-100 rounded-lg p-0.5">
+          <div className="flex gap-1 bg-gray-100 rounded p-0.5">
             <button
               onClick={() => { setMode('explain'); setQuery(''); }}
               className={`flex-1 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
@@ -353,7 +353,7 @@ export default function GovernanceTranslator() {
                 ? 'Describe your situation... e.g. "the project went over budget and someone needs to decide"'
                 : 'Type a term... e.g. "Exception", "CCB", "RFC", "PIR"'
             }
-            className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent placeholder:text-gray-400"
+            className="w-full px-3 py-2 text-sm border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent placeholder:text-gray-400"
           />
           {mode === 'explain' && (
             <p className="mt-1.5 text-xs text-gray-400">

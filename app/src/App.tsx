@@ -27,11 +27,11 @@ export default function App() {
   const title = pageTitles[location.pathname] || 'ChangeFlow';
 
   return (
-    <div className="flex min-h-screen bg-gray-50 max-w-screen overflow-x-hidden">
+    <div className="flex min-h-screen bg-gray-100 max-w-screen overflow-x-hidden">
       <Sidebar />
-      <div className="flex-1 lg:ml-60 flex flex-col min-w-0">
+      <div className="flex-1 lg:ml-56 flex flex-col min-w-0">
         <Header title={title} />
-        <main className="flex-1 p-4 md:p-6">
+        <main className="flex-1 p-4 md:p-5">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/translator" element={<TranslatorView />} />

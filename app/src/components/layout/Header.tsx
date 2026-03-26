@@ -3,7 +3,7 @@ import { listProfiles } from '../../profiles';
 import { ProfileId } from '../../types/profile';
 
 export default function Header({ title }: { title: string }) {
-  const { activeProfileId, activeProfile, setProfile } = useStore();
+  const { activeProfileId, setProfile } = useStore();
   const allProfiles = listProfiles();
 
   return (

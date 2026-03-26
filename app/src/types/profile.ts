@@ -6,7 +6,7 @@
 // The governance ENGINE stays the same. The LABELS change.
 // =============================================================================
 
-export type ProfileId = 'prince2-itil' | 'pmi-itil' | 'safe-itil' | 'hybrid' | 'generic';
+export type ProfileId = 'prince2-itil' | 'pmi-itil' | 'safe-itil' | 'hybrid' | 'generic' | 'prince2-itil-custom';
 
 export interface MethodologicalProfile {
   id: ProfileId;
@@ -104,4 +104,38 @@ export interface ProfileEscalation {
   breachReport: string;                // "Exception Report" / "Variance Analysis"
   breachAuthority: string;             // "Project Board" / "Sponsor/Steering Committee"
   breachOutcomes: string[];            // What can the authority decide?
+}
+// =============================================================================
+// Custom Profile Extensions — User & Permission System
+// =============================================================================
+
+export type PermissionLevel = 'autonomous' | 'requires-approval';
+
+export type DepartmentId = 'pmo' | 'product-management' | 'operations' | 'support' | 'infrastructure';
+
+export interface Department {
+  id: DepartmentId;
+  name: string;
+  description: string;
+}
+
+export interface ProfileUser {
+  id: string;
+  username: string;           // Login identifier (e.g., "coord-pmo")
+  displayName: string;        // Display name (e.g., "Coord. PMO")
+  department: DepartmentId;
+  permissionLevel: PermissionLevel;
+  canCreate: boolean;
+  canApprove: boolean;
+  escalatesTo: string | null; // user ID of who they escalate to, null if autonomous
+}
+
+export interface CustomProfileExtension {
+  departments: Department[];
+  users: ProfileUser[];
+}
+
+// Extended profile interface — adds optional user layer
+export interface ExtendedMethodologicalProfile extends MethodologicalProfile {
+  customExtension?: CustomProfileExtension;
 }

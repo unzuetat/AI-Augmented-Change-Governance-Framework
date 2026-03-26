@@ -11,6 +11,7 @@ import {
   Zap,
   Info,
 } from 'lucide-react';
+import ClassificationPanel from '../components/intelligence/ClassificationPanel';
 
 interface FormData {
   title: string;
@@ -172,6 +173,18 @@ export default function IntakeForm() {
           />
         </div>
 
+         {/* AI Classification suggestions */}
+        <ClassificationPanel
+          title={form.title}
+          description={form.description}
+          onAccept={(field, value) => {
+            if (field === 'type') update('type', value as ChangeType);
+            if (field === 'risk') update('risk', value as RiskLevel);
+            if (field === 'category') update('category', value as ChangeCategory);
+            if (field === 'scope') update('scope', value as ChangeScope);
+          }}
+        />
+        
         {/* Type + Scope row */}
         <div className="grid grid-cols-2 gap-4">
           <div>

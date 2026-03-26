@@ -3,6 +3,7 @@ import { useStore } from '../store';
 import { changes as seedChanges } from '../data/seed';
 import { ChangeRecord, ChangeStatus, RiskLevel, ChangeScope, ChangeType } from '../types';
 import SimilarityPanel from '../components/intelligence/SimilarityPanel';
+import RiskScorePanel from '../components/intelligence/RiskScorePanel';
 import {
   ArrowRightLeft,
   Shield,
@@ -341,6 +342,11 @@ export default function ChangeRegister() {
                       </div>
                     </div>
 
+                        {/* Risk scoring */}
+                    <div className="mt-3 pt-3 border-t border-gray-200">
+                      <RiskScorePanel change={change} />
+                    </div>
+                    
                       {/* Similarity detection */}
                     <div className="mt-3 pt-3 border-t border-gray-200">
                       <SimilarityPanel target={change} allChanges={changes} />

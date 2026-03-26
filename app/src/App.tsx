@@ -6,6 +6,7 @@ import TranslatorView from './views/TranslatorView';
 import PlaceholderView from './views/PlaceholderView';
 import ChangeRegister from './views/ChangeRegister';
 import IntakeForm from './views/IntakeForm';
+import WorkflowViewer from './views/WorkflowViewer';
 
 const pageTitles: Record<string, string> = {
   '/':           'Dashboard',
@@ -31,7 +32,7 @@ export default function App() {
             <Route path="/translator" element={<TranslatorView />} />
         <Route path="/changes" element={<ChangeRegister />} />
             <Route path="/intake" element={<IntakeForm />} />
-            <Route path="/workflow" element={<PlaceholderView name="Workflow Viewer" />} />
+            <Route path="/workflow" element={<WorkflowViewer />} />
             <Route path="/settings" element={<PlaceholderView name="Settings" />} />
           </Routes>
         </main>

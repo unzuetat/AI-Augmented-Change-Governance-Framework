@@ -26,15 +26,15 @@ export default function RiskScorePanel({ change }: Props) {
             <span className={`text-2xl font-bold ${colors.text}`}>{score.total}</span>
             <span className="text-xs text-gray-400">/ 100</span>
           </div>
-          <span className={`text-[10px] font-bold uppercase px-2.5 py-1 rounded-full ${colors.bg} ${colors.text} border border-current/20`}>
+          <span className={`text-[10px] font-bold uppercase px-2.5 py-1 rounded-sm ${colors.bg} ${colors.text} border border-current/20`}>
             {score.level} risk
           </span>
         </div>
 
         {/* Progress bar */}
-        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-gray-200 rounded-sm overflow-hidden">
           <div
-            className={`h-full rounded-full transition-all ${colors.bar}`}
+            className={`h-full rounded-sm transition-all ${colors.bar}`}
             style={{ width: `${score.total}%` }}
           />
         </div>
@@ -52,9 +52,9 @@ export default function RiskScorePanel({ change }: Props) {
                 {factor.score} / {factor.maxScore}
               </span>
             </div>
-            <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden mb-1">
+            <div className="w-full h-1 bg-gray-100 rounded-sm overflow-hidden mb-1">
               <div
-                className="h-full rounded-full bg-cf-400 transition-all"
+                className="h-full rounded-sm bg-cf-400 transition-all"
                 style={{ width: `${(factor.score / factor.maxScore) * 100}%` }}
               />
             </div>

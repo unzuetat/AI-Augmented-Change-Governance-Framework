@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { ChangeRecord, GovernanceMetrics } from '../types';
+import { ChangeRecord } from '../types';
 import { MethodologicalProfile, ProfileId } from '../types/profile';
 import { getProfile } from '../profiles';
 

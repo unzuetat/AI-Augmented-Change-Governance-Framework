@@ -350,7 +350,7 @@ export default function ScenarioSimulator() {
       </div>
 
       {/* Current step */}
-      <div className={`rounded-xl border border-gray-200 border-l-4 ${colorClass} p-5`}>
+      <div className={`rounded border border-gray-200 border-l-4 ${colorClass} p-5`}>
         <div className="flex items-center gap-2 mb-1">
           <span className="text-[9px] font-mono text-gray-400 uppercase">{step.universal}</span>
           <span className="text-gray-300">·</span>
@@ -359,12 +359,12 @@ export default function ScenarioSimulator() {
 
         <p className="text-sm text-gray-700 leading-relaxed mt-3 mb-4">{step.narrative}</p>
 
-        <div className="bg-white/60 rounded-lg border border-gray-200 p-3 mb-3">
+        <div className="bg-white/60 rounded border border-gray-200 p-3 mb-3">
           <p className="text-[10px] font-semibold text-gray-500 uppercase mb-1">Key Decision</p>
           <p className="text-xs text-gray-700 font-medium">{step.keyDecision}</p>
         </div>
 
-        <div className="bg-white/60 rounded-lg border border-gray-200 p-3">
+        <div className="bg-white/60 rounded border border-gray-200 p-3">
           <p className="text-[10px] font-semibold text-green-600 uppercase mb-1">Outcome</p>
           <p className="text-xs text-gray-700 font-medium">{step.outcome}</p>
         </div>
@@ -375,7 +375,7 @@ export default function ScenarioSimulator() {
         <button
           onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
           disabled={currentStep === 0}
-          className="flex items-center gap-1 px-4 py-2 text-xs font-medium rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="flex items-center gap-1 px-4 py-2 text-xs font-medium rounded border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ChevronLeft size={14} />
           Previous

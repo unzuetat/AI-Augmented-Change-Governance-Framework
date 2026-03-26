@@ -303,7 +303,7 @@ export default function GovernanceTranslator() {
       />
 
       {/* Panel */}
-      <div className="relative w-full max-w-2xl mx-4 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden">
+      <div className="relative w-full max-w-2xl mx-4 bg-white rounded shadow-2xl border border-gray-200 overflow-hidden">
         {/* Header */}
         <div className="px-4 pt-4 pb-3 border-b border-gray-100">
           <div className="flex items-center gap-2 mb-3">

@@ -16,8 +16,7 @@ export const profiles: Record<ProfileId, MethodologicalProfile | ExtendedMethodo
     description: 'For organizations using a mix of PRINCE2 and PMI practices alongside ITIL. Uses the most commonly recognized term from either framework.',
     projectMethodology: 'PRINCE2 / PMI Hybrid',
   },
-  'generic': {
-    'prince2-itil-custom': prince2ItilCustomProfile,
+ 'generic': {
     ...prince2ItilProfile,
     id: 'generic',
     name: 'Framework-Agnostic',
@@ -81,6 +80,7 @@ export const profiles: Record<ProfileId, MethodologicalProfile | ExtendedMethodo
       ],
     },
   },
+  'prince2-itil-custom': prince2ItilCustomProfile,
 };
 
 // Helper to get a profile by ID

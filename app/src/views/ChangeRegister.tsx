@@ -373,30 +373,3 @@ export default function ChangeRegister() {
     </div>
   );
 }
-```
-
----
-
-Ahora necesitas conectar esta vista al router. 
-
-**Editar `app/src/App.tsx`**
-
-Clic en el lápiz. Busca esta línea (en los imports, arriba del archivo):
-```
-import PlaceholderView from './views/PlaceholderView';
-```
-
-Cámbiala por:
-```
-import PlaceholderView from './views/PlaceholderView';
-import ChangeRegister from './views/ChangeRegister';
-```
-
-Luego busca esta línea (en las rutas, más abajo):
-```
-            <Route path="/changes" element={<PlaceholderView name="Change Register" />} />
-```
-
-Cámbiala por:
-```
-            <Route path="/changes" element={<ChangeRegister />} />

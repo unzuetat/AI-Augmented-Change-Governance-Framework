@@ -375,7 +375,7 @@ export default function ScenarioSimulator() {
         <button
           onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
           disabled={currentStep === 0}
-          className="flex items-center gap-1 px-4 py-2 text-xs font-medium rounded border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="flex items-center gap-1 px-4 py-2 text-xs font-medium rounded bg-cf-500 text-white hover:bg-cf-600 transition-colors"
         >
           <ChevronLeft size={14} />
           Previous

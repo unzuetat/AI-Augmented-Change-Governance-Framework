@@ -72,7 +72,7 @@ export default function ClassificationPanel({ title, description, onAccept }: Pr
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-semibold text-gray-500 uppercase w-16">{field.label}</span>
                   <span className="text-xs font-semibold text-gray-800">{field.value}</span>
-                  <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${confColor}`}>
+                  <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-sm ${confColor}`}>
                     {field.confidence}%
                   </span>
                 </div>

@@ -352,29 +352,3 @@ export default function IntakeForm() {
   );
 }
 ```
-
----
-
-Ahora conecta la vista al router.
-
-**Editar `app/src/App.tsx`**
-
-Clic en el lápiz. Busca esta línea en los imports:
-```
-import ChangeRegister from './views/ChangeRegister';
-```
-
-Cámbiala por:
-```
-import ChangeRegister from './views/ChangeRegister';
-import IntakeForm from './views/IntakeForm';
-```
-
-Luego busca esta línea en las rutas:
-```
-            <Route path="/intake" element={<PlaceholderView name="New Change Request" />} />
-```
-
-Cámbiala por:
-```
-            <Route path="/intake" element={<IntakeForm />} />

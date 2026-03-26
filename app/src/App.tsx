@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import Dashboard from './views/Dashboard';
 import TranslatorView from './views/TranslatorView';
 import PlaceholderView from './views/PlaceholderView';
+import ChangeRegister from './views/ChangeRegister';
 
 const pageTitles: Record<string, string> = {
   '/':           'Dashboard',
@@ -27,7 +28,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/translator" element={<TranslatorView />} />
-            <Route path="/changes" element={<PlaceholderView name="Change Register" />} />
+        <Route path="/changes" element={<ChangeRegister />} />
             <Route path="/intake" element={<PlaceholderView name="New Change Request" />} />
             <Route path="/workflow" element={<PlaceholderView name="Workflow Viewer" />} />
             <Route path="/settings" element={<PlaceholderView name="Settings" />} />

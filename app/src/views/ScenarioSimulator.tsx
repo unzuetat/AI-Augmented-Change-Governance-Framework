@@ -388,7 +388,7 @@ export default function ScenarioSimulator() {
         {currentStep < activeScenario.steps.length - 1 ? (
           <button
             onClick={() => setCurrentStep(currentStep + 1)}
-            className="flex items-center gap-1 px-4 py-2 text-xs font-medium rounded-lg bg-cf-600 text-white hover:bg-cf-700 transition-colors"
+            className="flex items-center gap-1 px-4 py-2 text-xs font-medium rounded bg-cf-600 text-white hover:bg-cf-700 transition-colors"
           >
             Next
             <ChevronRight size={14} />
@@ -396,7 +396,7 @@ export default function ScenarioSimulator() {
         ) : (
           <button
             onClick={reset}
-            className="flex items-center gap-1 px-4 py-2 text-xs font-medium rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors"
+            className="flex items-center gap-1 px-4 py-2 text-xs font-medium rounded bg-green-600 text-white hover:bg-green-700 transition-colors"
           >
             <RotateCcw size={12} />
             Back to Scenarios

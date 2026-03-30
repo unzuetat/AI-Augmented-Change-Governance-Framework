@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
+import HeroDemo from './views/HeroDemo';
 import Dashboard from './views/Dashboard';
 import TranslatorView from './views/TranslatorView';
 import PlaceholderView from './views/PlaceholderView';
@@ -14,7 +15,8 @@ import ScenarioSimulator from './views/ScenarioSimulator';
 import { useStore } from './store';
 
 const pageTitles: Record<string, string> = {
-  '/':           'Dashboard',
+  '/':           'Routing Playground',
+  '/dashboard':  'Dashboard',
   '/changes':    'Change Register',
   '/intake':     'New Change Request',
   '/workflow':   'Workflow Viewer',
@@ -40,7 +42,8 @@ export default function App() {
         <Header title={title} />
         <main className="flex-1 p-4 md:p-5">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<HeroDemo />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/translator" element={<TranslatorView />} />
             <Route path="/changes" element={<ChangeRegister />} />
             <Route path="/intake" element={<IntakeForm />} />

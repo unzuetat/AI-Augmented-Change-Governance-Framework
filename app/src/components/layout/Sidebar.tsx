@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  LayoutDashboard,
+  Zap,
   FilePlus,
   List,
+  LayoutDashboard,
   GitBranch,
   Languages,
   ArrowLeftRight,
@@ -11,26 +12,37 @@ import {
   Settings,
   Menu,
   X,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 import { useI18n } from '../../i18n';
 
-
-
-
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
-const { t } = useI18n();
+  const [moreOpen, setMoreOpen] = useState(false);
+  const { t } = useI18n();
 
-const navItems = [
-    { to: '/',           label: t.nav.dashboard,          icon: LayoutDashboard },
-    { to: '/changes',    label: t.nav.changeRegister,     icon: List },
-    { to: '/intake',     label: t.nav.newRequest,         icon: FilePlus },
+  const primaryItems = [
+    { to: '/',        label: t.routing.routingPlayground, icon: Zap },
+    { to: '/intake',  label: t.nav.newRequest,            icon: FilePlus },
+    { to: '/changes', label: t.nav.changeRegister,        icon: List },
+  ];
+
+  const moreItems = [
+    { to: '/dashboard',  label: t.nav.dashboard,          icon: LayoutDashboard },
     { to: '/workflow',   label: t.nav.workflow,            icon: GitBranch },
     { to: '/translator', label: t.nav.translator,         icon: Languages },
-    { to: '/compare',    label: t.nav.compareFrameworks,  icon: ArrowLeftRight },
-    { to: '/simulator',  label: t.nav.scenarioSimulator,  icon: Play },
+    { to: '/compare',    label: t.nav.compareFrameworks,   icon: ArrowLeftRight },
+    { to: '/simulator',  label: t.nav.scenarioSimulator,   icon: Play },
   ];
-  
+
+  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `flex items-center gap-3 px-4 py-2 text-xs font-medium transition-colors border-l-2 ${
+      isActive
+        ? 'border-l-cf-500 bg-cf-50 text-cf-800'
+        : 'border-l-transparent text-gray-500 hover:bg-gray-50 hover:text-gray-700'
+    }`;
+
   return (
     <>
       <button
@@ -69,18 +81,38 @@ const navItems = [
         </div>
 
         <nav className="flex-1 py-2 overflow-y-auto">
-          {navItems.map(({ to, label, icon: Icon }) => (
+          {/* Primary items */}
+          {primaryItems.map(({ to, label, icon: Icon }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              onClick={() => setOpen(false)}
+              className={navLinkClass}
+            >
+              <Icon size={15} strokeWidth={1.8} />
+              {label}
+            </NavLink>
+          ))}
+
+          {/* More tools expander */}
+          <button
+            onClick={() => setMoreOpen(!moreOpen)}
+            className="flex items-center justify-between w-full px-4 py-2 text-xs font-medium text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors border-l-2 border-l-transparent mt-1"
+          >
+            <span>{t.routing.moreTools}</span>
+            {moreOpen
+              ? <ChevronUp size={12} />
+              : <ChevronDown size={12} />
+            }
+          </button>
+
+          {moreOpen && moreItems.map(({ to, label, icon: Icon }) => (
             <NavLink
               key={to}
               to={to}
               onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-2 text-xs font-medium transition-colors border-l-2 ${
-                  isActive
-                    ? 'border-l-cf-500 bg-cf-50 text-cf-800'
-                    : 'border-l-transparent text-gray-500 hover:bg-gray-50 hover:text-gray-700'
-                }`
-              }
+              className={navLinkClass}
             >
               <Icon size={15} strokeWidth={1.8} />
               {label}
@@ -101,7 +133,7 @@ const navItems = [
             }
           >
             <Settings size={15} strokeWidth={1.8} />
-     {t.nav.settings}
+            {t.nav.settings}
           </NavLink>
         </div>
       </aside>

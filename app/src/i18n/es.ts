@@ -289,6 +289,16 @@ export const es = {
     importRules: 'Importar reglas',
     ruleName: 'Regla',
     unableToCalculate: 'No se pudo calcular el enrutamiento',
+    heroTitle: 'Mira quién aprueba tu cambio y por qué — antes de enviarlo',
+    heroSubtitle: 'Cambia los parámetros y observa cómo el motor de routing determina quién aprueba, quién es notificado, y por qué.',
+    configureChange: 'Configura un cambio',
+    tryScenario: 'Prueba un escenario',
+    routingResult: 'Resultado del routing',
+    ctaFullIntake: 'Probar con tu propio cambio',
+    ctaChangeRegister: 'Ver registro de cambios',
+    profileNote: 'Mostrando roles del perfil:',
+    moreTools: 'Más herramientas',
+    routingPlayground: 'Routing Playground',
   },
 };
 

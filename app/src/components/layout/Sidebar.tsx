@@ -12,20 +12,24 @@ import {
   Menu,
   X,
 } from 'lucide-react';
+import { useI18n } from '../../i18n';
 
-const navItems = [
-  { to: '/',           label: 'Dashboard',         icon: LayoutDashboard },
-  { to: '/changes',    label: 'Change register',   icon: List },
-  { to: '/intake',     label: 'New request',       icon: FilePlus },
-  { to: '/workflow',   label: 'Workflow',           icon: GitBranch },
-  { to: '/translator', label: 'Translator',        icon: Languages },
-  { to: '/compare',    label: 'Compare frameworks', icon: ArrowLeftRight },
-  { to: '/simulator',  label: 'Scenario simulator', icon: Play },
-];
+
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
+const { t } = useI18n();
 
+  const navItems = [
+    { to: '/',           label: t.nav.dashboard,          icon: LayoutDashboard },
+    { to: '/changes',    label: t.nav.changeRegister,     icon: List },
+    { to: '/intake',     label: t.nav.newRequest,         icon: FilePlus },
+    { to: '/workflow',   label: t.nav.workflow,            icon: GitBranch },
+    { to: '/translator', label: t.nav.translator,         icon: Languages },
+    { to: '/compare',    label: t.nav.compareFrameworks,  icon: ArrowLeftRight },
+    { to: '/simulator',  label: t.nav.scenarioSimulator,  icon: Play },
+  ];
+  
   return (
     <>
       <button
@@ -96,7 +100,7 @@ export default function Sidebar() {
             }
           >
             <Settings size={15} strokeWidth={1.8} />
-            Settings
+     {t.nav.settings}
           </NavLink>
         </div>
       </aside>
